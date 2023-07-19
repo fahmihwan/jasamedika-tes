@@ -1,0 +1,142 @@
+<div class="container">
+  <div class="row my-4">
+    <div class="d-flex justify-content-between">
+      <h4>Registerasi pasien</h4>
+      <a routerLink="/pasien" class="btn btn-primary">kembali</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card">
+        <h5 class="card-header">Form pasien</h5>
+        <div class="card-body">
+          <form [formGroup]="pasienForm" (ngSubmit)="addPasien()">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="nama" class="form-label">Nama Pasien</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nama"
+                    formControlName="nama_pasien"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="telp" class="form-label">Telp</label>
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="telp"
+                    placeholder="Enter telephone number"
+                    formControlName="telp"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="tgl-lahir" class="form-label"
+                    >Tanggal Lahir</label
+                  >
+                  <input
+                    type="date"
+                    formControlName="tanggal_lahir"
+                    class="form-control"
+                    id="tgl-lahir"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="tgl-lahir" class="form-label"
+                    >Jenis kelamin</label
+                  >
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="jenis_kelamin"
+                      id="jenis_kelamin1"
+                      formControlName="jenis_kelamin"
+                      value="L"
+                    />
+                    <label class="form-check-label" for="jenis_kelamin1">
+                      Pria
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="jenis_kelamin"
+                      id="jenis_kelamin2"
+                      formControlName="jenis_kelamin"
+                      value="P"
+                    />
+                    <label class="form-check-label" for="jenis_kelamin2">
+                      Wanita
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="alamat" class="form-label">Alamat</label>
+                  <textarea
+                    class="form-control"
+                    placeholder="Leave a comment here"
+                    id="alamat"
+                    formControlName="alamat"
+                    style="height: 100px"
+                  ></textarea>
+
+                  <!-- <input type="text" class="form-control" id="alamat" /> -->
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                    <div class="mb-3">
+                      <label for="rt" class="form-label">RT</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="rt"
+                        formControlName="rt"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="mb-3">
+                      <label for="rw" class="form-label">RW</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="rw"
+                        formControlName="rw"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="tgl-lahir" class="form-label">Kelurahan</label>
+                  <select
+                    class="form-select"
+                    id="kelurahan"
+                    aria-label="Default select example"
+                    formControlName="kelurahan_id"
+                  >
+                    <option selected>pilih kelurahan</option>
+                    <option
+                      *ngFor="let data of kelurahanResult"
+                      [ngValue]="data.id"
+                    >
+                      {{ data.nama_kelurahan }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary float-end">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

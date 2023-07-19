@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row my-4">
+    <div class="d-flex justify-content-between">
+      <h4>Tambah data kelurahan</h4>
+      <a routerLink="/kelurahan" class="btn btn-primary">kembali</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <h5 class="card-header">Form Kelurahan</h5>
+        <div class="card-body">
+          <!-- Nama Kelurahan, Nama Kecamatan, Nama Kota -->
+          <form [formGroup]="kelurahanForm" (ngSubmit)="editKelurahan()">
+            <div class="mb-3">
+              <label for="kelurahan" class="form-label">Nama Kelurahan</label>
+              <input
+                type="text"
+                formControlName="nama_kelurahan"
+                required="true"
+                class="form-control"
+                id="kelurahan"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="kecamatan" class="form-label">Nama Kecamatan</label>
+              <input
+                type="text"
+                formControlName="nama_kecamatan"
+                class="form-control"
+                id="kecamatan"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="kota" class="form-label">Nama Kota</label>
+              <input
+                formControlName="nama_kota"
+                type="text"
+                class="form-control"
+                id="kota"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

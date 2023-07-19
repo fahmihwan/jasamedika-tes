@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+    <div class="d-flex justify-content-between mt-3">
+      <p>List Pasien</p>
+      <a class="btn btn-primary" routerLink="/pasien/registerasi-pasien">
+        Registerasi Pasien</a
+      >
+    </div>
+
+    <!-- id	id_pasien	nama_pasien	alamat	telp	rt	rw	kelurahan_id	tanggal_lahir	jenis_kelamin	created_at	updated_at	 -->
+    <table class="table">
+      <thead class="text-uppercase">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">ID pasien</th>
+          <th scope="col">nama</th>
+          <th scope="col">alamat</th>
+          <th scope="col">telp</th>
+          <th scope="col">RT / RW</th>
+          <th scope="col">kelurahan</th>
+          <th scope="col">kecamatan</th>
+          <th scope="col">kota</th>
+          <th scope="col">tanggal lahir</th>
+          <th scope="col">jenis kelamin</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of pasienResults; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ data?.id_pasien }}</td>
+          <td>{{ data?.nama_pasien }}</td>
+          <td>{{ data?.alamat }}</td>
+          <td>{{ data?.telp }}</td>
+          <td>{{ data?.rt }} / {{ data?.rw }}</td>
+          <td>{{ data?.kelurahan?.nama_kelurahan }}</td>
+          <td>{{ data?.kelurahan?.nama_kecamatan }}</td>
+          <td>{{ data?.kelurahan?.nama_kota }}</td>
+          <td>{{ data?.tanggal_lahir }}</td>
+          <td>{{ data?.jenis_kelamin }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

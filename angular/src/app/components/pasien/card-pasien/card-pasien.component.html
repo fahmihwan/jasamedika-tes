@@ -1,0 +1,42 @@
+<div class="container-fluid">
+  <div class="d-flex justify-content-end mt-3">
+    <a routerLink="/pasien" class="btn btn-primary">kembali</a>
+  </div>
+  <div
+    class="d-flex justify-content-center"
+    style="align-items: center; height: 80vh"
+  >
+    <div class="card border-secondary mb-3" style="width: 40rem">
+      <div class="card-header">KARTU PASIEN</div>
+      <div class="card-body text-secondary">
+        <h5 class="card-title">ID : 1501000001</h5>
+        <table class="cards">
+          <tr>
+            <td>Nama</td>
+            <td>: {{ getDataFromRouter?.nama_pasien }}</td>
+          </tr>
+          <tr>
+            <td>Alamat</td>
+            <td>: {{ getDataFromRouter?.alamat }}</td>
+          </tr>
+          <tr>
+            <td>RT/RW</td>
+            <td>: {{ getDataFromRouter?.rt }} / {{ getDataFromRouter?.rw }}</td>
+          </tr>
+          <tr>
+            <td>Kelurahan</td>
+            <td>: {{ getDataFromRouter?.kelurahan?.nama_kelurahan }}</td>
+          </tr>
+          <tr>
+            <td>Tanggal lahir</td>
+            <td>: {{ getDataFromRouter?.tanggal_lahir }}</td>
+          </tr>
+          <tr>
+            <td>Jenis kelamin</td>
+            <td>: {{ getDataFromRouter?.jenis_kelamin }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
